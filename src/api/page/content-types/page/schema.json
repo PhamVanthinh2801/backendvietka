@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "picture_managers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::picture-manager.picture-manager",
+      "mappedBy": "page"
+    },
+    "project_managers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-manager.project-manager",
+      "mappedBy": "page"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "richtexts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::richtext.richtext",
+      "mappedBy": "page"
+    }
+  }
+}

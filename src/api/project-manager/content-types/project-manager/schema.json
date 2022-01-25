@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_managers",
+  "info": {
+    "singularName": "project-manager",
+    "pluralName": "project-managers",
+    "displayName": "ProjectManager",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::page.page",
+      "inversedBy": "project_managers"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
